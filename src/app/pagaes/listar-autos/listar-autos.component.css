@@ -1,0 +1,53 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  }
+
+body {
+  padding: 5em 1em;
+  background-image: url(https://media.gq.com.mx/photos/5d6ec5c43d0c810008e7008c/16:9/w_2560%2Cc_limit/bugatti.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  }
+
+@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+
+h1 {
+  text-align: center;
+  font-size: 275%;
+  font-family: 'Covered By Your Grace', cursive;
+  font-weight: 300;
+  margin-top: -1em;
+  text-shadow: 0 2px 1px white;
+  }
+
+#box {
+  margin: auto;
+  width: 50em;
+  @media all and (max-width: 52em) {
+    width: 100%;
+    }
+  height: 100%;
+  white-space: nowrap;
+  }
+#center {
+  vertical-align: middle;
+  display: inline-block;
+  white-space: normal;
+  }
+#box:after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: -10px;
+  }
+

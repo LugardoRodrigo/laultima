@@ -1,0 +1,31 @@
+body{
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpmowyPcqsez4sUYOFfB48kBWPNwuYOd3SyA&usqp=CAU') no-repeat;
+  background-size: cover;
+  font-family: 'century Gothic', sans-serif;
+}
+h1{
+  color: grey;
+  text-shadow: 1px 2px 2px black,0 0 25px rgb(38, 255, 0), 0 0 5px rgb(0, 255, 72);
+  text-align: center;
+}
+div.fotos{
+  margin: 10px 20px;
+  box-shadow: 0 4px 8px 0 rgb(135, 236, 250), 0 6px 20px 0 rgb(0, 0, 0,0.19);
+  float: left;
+  width: 230px;
+}
+div.fotos img{
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+div.fotos:hover{
+  border: 1px solid lightcoral;
+  transform: rotate(-3deg);
+}
+div.pie{
+  text-align: center;
+  text-shadow: 2px 2px 5px aqua;
+  padding: 10px;
+}

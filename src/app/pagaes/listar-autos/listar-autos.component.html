@@ -1,0 +1,59 @@
+
+<!--lllllllllllllllllllllllllllllll-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autos en concencionario</title>
+
+  <link rel="stylesheet" href="listar-autos.component.css">
+</head>
+<body>
+
+<!-- Mnsaje por si no hay empleados-->
+<p *ngIf="autos.length <=0" class="text-center" style="color: white;"><strong>No hay autos en el concesionario</strong> </p>
+
+<table class="table table-dark table-hover " *ngIf="autos.length >0">
+  <thead class="table-succes">
+    <tr>
+      <th scope="col">Modelo</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Color</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Cilindros</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Año</th>
+      <th scope="col">Carro</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let auto of autos; let i = index">
+      <td>{{ auto.modelo }}</td>
+      <td>{{ auto.marca }}</td>
+      <td>{{ auto.color }}</td>
+      <td>{{ auto.descripcion }}</td>
+      <td>{{ auto.cilindraje }}</td>
+      <td>{{ auto.precio }}</td>
+      <td>{{ auto.ano }}</td>
+      <td> <img src="{{ auto.imagen }}" width="180px" height="120px" alt="">   </td>
+      <td>
+        <span [routerLink]="['/editar-autos/', auto._id]">
+          <button type="button" class="btn btn-warning btn-sm">Editar</button>
+
+        </span>
+      </td>
+      <span (click)="eliminarAuto(auto,i)">
+        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+      </span>
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>

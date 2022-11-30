@@ -1,0 +1,160 @@
+<h2>Agregar Auto</h2>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-4">
+
+    <div class="card-body">
+
+
+      <form [formGroup]="autoForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+
+          <label for="modelo">Modelo:</label>
+          <input type="text" class="form-control" formControlName="modelo" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['modelo'].errors?.['required']">
+            El modelo es obligatorio
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="marca">marca:</label>
+          <select class="custom-select form-control" (change)="actualizarMarca($event.target.value)"
+            formControlName="marca">
+
+            <option value="">Selecciona la marca...</option>
+            <option *ngFor="let marca of autoMarca" value="{{marca}}">{{marca}}</option>
+
+          </select>
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['marca'].errors?.['required']">
+            Debes de seleccionar una marca
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <label for="color">Color:</label>
+          <input type="text" class="form-control" formControlName="color" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['color'].errors?.['required']">
+            El color es obligatorio
+          </div>
+
+          <div style="color: red;" *ngIf="enviado && myForm['color'].errors?.['pattern']">
+            El color es obligatorio
+          </div>
+
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="descripcion">descripcion:</label>
+          <input type="text" class="form-control" formControlName="descripcion" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['descripcion'].errors?.['required']">
+            La descripcion es obligatorio
+          </div>
+
+          <br>
+
+          <div style="color: red;" *ngIf="enviado && myForm['descripcion'].errors?.['pattern']">
+            Solo se permitew numeros
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="cilindraje">cilindraje:</label>
+          <input type="text" class="form-control" formControlName="cilindraje" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['cilindraje'].errors?.['required']">
+            El cilindraje es obligatorio
+          </div>
+
+          <br>
+
+          <div style="color: red;" *ngIf="enviado && myForm['cilindraje'].errors?.['pattern']">
+            Solo se permitew numeros
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="precio">precio:</label>
+          <input type="text" class="form-control" formControlName="precio" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['precio'].errors?.['required']">
+            El precio es obligatorio
+          </div>
+
+          <br>
+
+          <div style="color: red;" *ngIf="enviado && myForm['precio'].errors?.['pattern']">
+            Solo se permitew numeros
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="ano">Año:</label>
+          <input type="text" class="form-control" formControlName="ano" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['ano'].errors?.['required']">
+            El año es obligatorio
+          </div>
+
+          <br>
+
+          <div style="color: red;" *ngIf="enviado && myForm['ano'].errors?.['pattern']">
+            Solo se permitew numeros
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="imagen">imagen:</label>
+          <input type="text" class="form-control" formControlName="imagen" />
+          <!-- error de validación  -->
+          <div style="color: red;" *ngIf="enviado && myForm['imagen'].errors?.['required']">
+            La imagen es obligatorio
+          </div>
+
+          <br>
+
+          <div style="color: red;" *ngIf="enviado && myForm['imagen'].errors?.['pattern']">
+            Solo se permitew numeros
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">
+            Agregar
+          </button>
+        </div>
+
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+</div>
